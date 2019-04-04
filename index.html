@@ -1,0 +1,175 @@
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <title>Javascript for Beginners</title>
+</head>
+<body>
+  <div id="banner">
+    <h1>Javascript for Beginners</h1>
+    <p>Cheat sheet and useful resources by Le Wagon bootcamp</p>
+    <a class="btn btn-danger btn-lg" href="www.lewagon.com/kyoto">About Le Wagon</a>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <div class="title">
+          <i class="fas fa-folder-open fa-5x"></i>
+          <h2>Let's set up</h2>
+        </div>
+        <div class="content">
+          <ol>
+            <li>Start Sublime Text. It will open a new black window.</li>
+            <li>Create a <strong>folder</strong> <code>movie_search</code> on your Desktop. Drag &amp; drop this folder in the Sublime Text window.</li>
+            <li>
+              In Sublime Text left navigation:
+              <ul>
+                <li>Right click <strong>"New file"</strong></li>
+                <li>Save it as <code>index.html</code> with <strong>Cmd + S</strong> or <strong>Ctrl + S</strong></li>
+                <li>Do the same to create a <code>index.js</code> file</li>
+                <li>Then <strong>"New Folder"</strong> and create an <code>images</code> folder</li>
+              </ul>
+
+            </li>
+            <li>Finally double click on <code>index.html</code> to open it with Chrome</li>
+          </ol>
+
+          <img src="images/setup.png" alt="image">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <div class="title">
+          <i class="fas fa-file-code fa-5x"></i>
+          <h2>Add the HTML content</h2>
+        </div>
+        <div class="content">
+          <ul>
+            <li>
+              To save time, just right-click on the following images and save them in your <code>images</code> folder
+              <ul class="list-inline text-center">
+                <li><img style="width: 100px;" src="images/apicture.jpg" alt=""></li>
+                <li><img style="width: 100px;" src="images/noimage.jpg" alt=""></li>
+              </ul>
+            </li>
+            <li>Then start with this HTML code in <code>index.html</code></li>
+          </ul>
+          <pre><code style="white-space: pre;">
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+      &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Search your movie&lt;/title&gt;
+       &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+        &lt;!-- Bootstrap CSS --&gt;
+       &lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"&gt;
+        &lt;style&gt;
+          img {height: 300px;}
+          p {font-size: 15px;}
+        &lt;/style&gt;
+      &lt;/head&gt;
+      &lt;body style="margin: 0px;"&gt;
+        &lt;div class="m-3 d-flex justify-content-center"&gt;
+          &lt;form style="width: 25rem;"&gt;
+            &lt;div class="form-group"&gt;
+              &lt;label for="text" &gt;Your movie:&lt;/label&gt;
+              &lt;input type="text" class="form-control" id="my-movie"&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;div class="container"&gt;
+          &lt;div class="row" style="justify-content: center"&gt;
+            &lt;div class="col-xs-4"&gt;
+              &lt;div class="shadow p-4 m-3 text-center"&gt;
+                &lt;img src="images/apicture.jpg" alt="movie"&gt;
+                &lt;p class="m-0 mt-3"&gt;Movie list coming soon!&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;script src="index.js"&gt;&lt;/script&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+          </code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <div class="title">
+          <i class="fab fa-js-square fa-5x"></i>
+          <h2>Now, it's time for Javascript</h2>
+        </div>
+        <div class="content">
+          <p>
+            Here is the Javascript code we built together inside our <code>index.js</code> file.
+          </p>
+          <pre>
+            <code style="white-space: pre;">
+    const searchMovie = (event) =&gt; {
+    fetch(`http://www.omdbapi.com/?s=${event.currentTarget.value}&apikey=adf1f2d7`)
+      .then(response =&gt; response.json())
+      .then((data) =&gt; {
+        //console.log(data);
+        list.innerHTML = "";
+        let index = 0;
+        let item = "";
+        for (index=0; index&lt;10;  index++){
+          if(data.Search[index].Poster!="N/A"){
+            item = `&lt;div class="col-xs-4"&gt;&lt;div class="shadow p-4 m-3 text-center"&gt;&lt;img src='${data.Search[index].Poster}' alt='movie'&gt;&lt;p class="m-0 mt-3 text-center"&gt;${data.Search[index].Title}&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;`;
+          }
+          else{
+            item = `&lt;div class="col-xs-4"&gt;&lt;div class="shadow p-4 m-3 text-center"&gt;&lt;img src='images/noimage.jpg' alt='movie'&gt;&lt;p class="m-0 mt-3 text-center"&gt;${data.Search[index].Title}&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;`;
+          }
+          list.insertAdjacentHTML('beforeend', item);
+        }
+      });
+      event.preventDefault();
+    };
+
+    const list = document.querySelector(".row");
+    const input = document.querySelector("form input");
+    input.addEventListener("keyup", searchMovie);
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <div class="title">
+          <i class="fas fa-comments fa-5x"></i>
+          <h2>How did you like it?</h2>
+        </div>
+        <div class="content">
+          <p>
+            We hope you enjoyed the workshop :) Tell us what you though about it.
+          </p>
+          <div style="text-align: center">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSebKIkXhcHeXd0p2VjRKdlcWuxoGLQxGV5MW-wBojrQ6hYTLw/viewform?embedded=true" width="640" height="1148" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <ul class="list list-inline text-center">
+      <li><a href="https://www.facebook.com/lewagontokyo/"><i class="fab fa-facebook-square"></i></a></li>
+      <li><a href="https://www.instagram.com/lewagontokyo/?hl=en"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="https://www.youtube.com/channel/UChCDYcBCrb8tuPAO6e0P-Hw"><i class="fab fa-youtube-square"></i></a></li>
+    </ul>
+    <p>Le Wagon Kyoto 2019</p>
+  </div>
+</body>
+</html>
