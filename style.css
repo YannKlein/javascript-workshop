@@ -40,8 +40,8 @@ img {
 
 #banner {
   text-align: center;
-  padding: 160px;
-  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,100,0.9)), url("https://picsum.photos/1000/300?image=8");
+  padding: 80px;
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url("https://picsum.photos/1000/300?image=8");
   background-size: cover;
 }
 
@@ -49,6 +49,14 @@ img {
   color: rgb(240,240,240);
   font-size: 18px;
   font-weight: lighter;
+}
+#banner a {
+  background-color: #FD1015;
+  color: white;
+}
+
+#banner a:hover {
+  background-color: #ad0c0e;
 }
 
 .card {
@@ -58,33 +66,45 @@ img {
 
 .title {
   text-align: center;
-  margin-top: 50px;
+  margin: 50px 0px;
 }
 
 .content {
   font-size: 16px;
 }
 
+.content ul {
+  margin: 16px 0;
+}
+
 
 #footer {
   background-color: black;
   padding: 20px 0px;
+  margin: 0;
   letter-spacing: 10px;
 }
 
 #footer a {
-  color: grey;
+  color: white;
   font-size: 50px;
+  transition: 1s;
 }
 
 #footer a:hover {
-  color: rgb(220,220,220);
+  color: #FD1015;
   font-size: 50px;
 }
 
 #footer p {
-  color: grey;
+  color: white;
   text-align: center;
   margin: 5px;
+}
+
+#logo {
+  margin: 0;
+  margin-bottom: 16px;
+  width: 80px;
 }
 

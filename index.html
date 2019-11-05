@@ -2,24 +2,26 @@
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <meta charset="utf-8">
-  <title>Javascript for Beginners</title>
+  <title>Le Wagon Tokyo | Javascript for Beginners</title>
 </head>
 <body>
   <div id="banner">
+    <img id="logo" src="images/logo.png" alt="lw logo">
     <h1>Javascript for Beginners</h1>
-    <p>Cheat sheet and useful resources by Le Wagon bootcamp</p>
-    <a class="btn btn-danger btn-lg" href="https://www.lewagon.com/kyoto">About Le Wagon</a>
+    <p>Cheatsheet and useful resource by Le Wagon bootcamp</p>
+    <a class="btn btn-lg mt-3" href="https://info.lewagon.com/tokyo-newsletter-confirmation">Follow Le Wagon Tokyo</a>
   </div>
 
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-sm-10 border-bottom pb-5">
         <div class="title">
           <i class="fas fa-folder-open fa-5x"></i>
           <h2>Let's set up</h2>
@@ -41,13 +43,13 @@
             <li>Finally double click on <code>index.html</code> to open it with Chrome</li>
           </ol>
 
-          <img src="images/setup.png" alt="image">
+          <img class="shadow-lg" src="images/setup.png" alt="image">
         </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-sm-10 border-bottom pb-5">
         <div class="title">
           <i class="fas fa-file-code fa-5x"></i>
           <h2>Add the HTML content</h2>
@@ -56,14 +58,16 @@
           <ul>
             <li>
               To save time, just right-click on the following images and save them in your <code>images</code> folder
-              <ul class="list-inline text-center">
-                <li><img style="width: 100px;" src="images/apicture.jpg" alt=""></li>
-                <li><img style="width: 100px;" src="images/noimage.jpg" alt=""></li>
-              </ul>
             </li>
+          </ul>
+          <div class="d-flex justify-content-center">
+            <img class="shadow-lg" style="width: 100px;" src="images/apicture.jpg" alt="">
+            <img class="shadow-lg" style="width: 100px;" src="images/noimage.jpg" alt="">
+          </div>
+          <ul>
             <li>Then start with this HTML code in <code>index.html</code></li>
           </ul>
-          <pre><code style="white-space: pre;">
+          <pre><code class="html" style="white-space: pre;">
     &lt;!DOCTYPE html&gt;
     &lt;html lang="en"&gt;
       &lt;head&gt;
@@ -104,8 +108,8 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-sm-10">
         <div class="title">
           <i class="fab fa-js-square fa-5x"></i>
           <h2>Now, it's time for Javascript</h2>
@@ -115,7 +119,7 @@
             Here is the Javascript code we built together inside our <code>index.js</code> file.
           </p>
           <pre>
-            <code style="white-space: pre;">
+            <code class="javascript" style="white-space: pre;">
     const searchMovie = (event) =&gt; {
     fetch(`http://www.omdbapi.com/?s=${event.currentTarget.value}&apikey=9555c244`)
       .then(response =&gt; response.json())
@@ -145,32 +149,17 @@
         </div>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-        <div class="title">
-          <i class="fas fa-comments fa-5x"></i>
-          <h2>How did you like it?</h2>
-        </div>
-        <div class="content">
-          <p>
-            We hope you enjoyed the workshop :) Tell us what you though about it.
-          </p>
-          <div style="text-align: center">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSebKIkXhcHeXd0p2VjRKdlcWuxoGLQxGV5MW-wBojrQ6hYTLw/viewform?embedded=true" width="640" height="1148" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 
   <div id="footer">
-    <ul class="list list-inline text-center">
-      <li><a href="https://www.facebook.com/lewagontokyo/"><i class="fab fa-facebook-square"></i></a></li>
-      <li><a href="https://www.instagram.com/lewagontokyo/?hl=en"><i class="fab fa-instagram"></i></a></li>
-      <li><a href="https://www.youtube.com/channel/UChCDYcBCrb8tuPAO6e0P-Hw"><i class="fab fa-youtube-square"></i></a></li>
-    </ul>
-    <p>Le Wagon Kyoto 2019</p>
+    <div class="d-flex justify-content-center">
+      <a class="mx-3" href="https://www.facebook.com/lewagontokyo/"><i class="fab fa-facebook-square"></i></a>
+      <a class="mx-3" href="https://www.instagram.com/lewagontokyo/?hl=en"><i class="fab fa-instagram"></i></a>
+      <a class="mx-3" href="https://www.youtube.com/channel/UChCDYcBCrb8tuPAO6e0P-Hw"><i class="fab fa-youtube-square"></i></a>
+    </div>
+    <p>Le Wagon Tokyo</p>
   </div>
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
